@@ -22,13 +22,6 @@ public class Ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextFieldNombreCli = new javax.swing.JTextField();
-        jTextFieldApellido = new javax.swing.JTextField();
-        jTextFieldCedula = new javax.swing.JTextField();
-        jTextFieldDireccion = new javax.swing.JTextField();
-        jTextFieldCelular = new javax.swing.JTextField();
-        jTextFieldEmail = new javax.swing.JTextField();
-        jButtonAddCliente = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
@@ -51,6 +44,13 @@ public class Ventana extends javax.swing.JFrame {
         jLabelCelular = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
         jLabelCliente = new javax.swing.JLabel();
+        jTextFieldNombreCli = new javax.swing.JTextField();
+        jTextFieldApellido = new javax.swing.JTextField();
+        jTextFieldCedula = new javax.swing.JTextField();
+        jTextFieldCelular = new javax.swing.JTextField();
+        jTextFieldDireccion = new javax.swing.JTextField();
+        jButtonAddCliente = new javax.swing.JButton();
+        jTextFieldEmail = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jButtonAddProducto = new javax.swing.JButton();
         jTextFieldPrecio = new javax.swing.JTextField();
@@ -84,58 +84,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldNombreCli.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldNombreCliKeyTyped(evt);
-            }
-        });
-        jPanel1.add(jTextFieldNombreCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 220, -1));
-
-        jTextFieldApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldApellidoActionPerformed(evt);
-            }
-        });
-        jTextFieldApellido.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldApellidoKeyTyped(evt);
-            }
-        });
-        jPanel1.add(jTextFieldApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 220, -1));
-
-        jTextFieldCedula.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldCedulaKeyTyped(evt);
-            }
-        });
-        jPanel1.add(jTextFieldCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 220, -1));
-        jPanel1.add(jTextFieldDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 220, -1));
-
-        jTextFieldCelular.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldCelularKeyTyped(evt);
-            }
-        });
-        jPanel1.add(jTextFieldCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 220, -1));
-        jPanel1.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 220, -1));
-
-        jButtonAddCliente.setText("AGREGAR");
-        jButtonAddCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonAddClienteMouseClicked(evt);
-            }
-        });
-        jButtonAddCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddClienteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonAddCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
-
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("SUBTOTAL");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, -1, -1));
 
         jTableClientes.setBackground(new java.awt.Color(204, 204, 204));
         jTableClientes.setForeground(new java.awt.Color(51, 51, 51));
@@ -149,7 +101,7 @@ public class Ventana extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTableClientes);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 94));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 94));
 
         jTableProducto.setBackground(new java.awt.Color(204, 204, 204));
         jTableProducto.setModel(new javax.swing.table.DefaultTableModel(
@@ -192,7 +144,7 @@ public class Ventana extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTableSubtotal);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 359, 90));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 359, 90));
 
         jButtonAdd.setText("COMPRAR");
         jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -224,7 +176,7 @@ public class Ventana extends javax.swing.JFrame {
                 jButtonElimiClienteKeyPressed(evt);
             }
         });
-        jPanel1.add(jButtonElimiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+        jPanel1.add(jButtonElimiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         jButtonEliminarproducto.setText("ELIMINAR");
         jButtonEliminarproducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,7 +207,7 @@ public class Ventana extends javax.swing.JFrame {
                 jButtonEliminarSubtotalKeyPressed(evt);
             }
         });
-        jPanel1.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, -1, -1));
+        jPanel1.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -281,6 +233,47 @@ public class Ventana extends javax.swing.JFrame {
         jLabelCliente.setForeground(new java.awt.Color(102, 102, 102));
         jLabelCliente.setText("CLIENTES");
 
+        jTextFieldNombreCli.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldNombreCliKeyTyped(evt);
+            }
+        });
+
+        jTextFieldApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellidoActionPerformed(evt);
+            }
+        });
+        jTextFieldApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldApellidoKeyTyped(evt);
+            }
+        });
+
+        jTextFieldCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCedulaKeyTyped(evt);
+            }
+        });
+
+        jTextFieldCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCelularKeyTyped(evt);
+            }
+        });
+
+        jButtonAddCliente.setText("AGREGAR");
+        jButtonAddCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAddClienteMouseClicked(evt);
+            }
+        });
+        jButtonAddCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -292,39 +285,67 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelCedula)
                             .addComponent(jLabelApellido)
-                            .addComponent(jLabelNombre)))
+                            .addComponent(jLabelNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelCelular)
                             .addComponent(jLabelDireccion)
-                            .addComponent(jLabelEmail)))
+                            .addComponent(jLabelEmail))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabelCliente)))
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonAddCliente)
+                .addGap(108, 108, 108))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelCliente)
-                .addGap(13, 13, 13)
-                .addComponent(jLabelNombre)
-                .addGap(28, 28, 28)
-                .addComponent(jLabelApellido)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNombre)
+                    .addComponent(jTextFieldNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelApellido)
+                    .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabelCedula)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCedula)
+                    .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelDireccion)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDireccion)
+                    .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabelCelular)
-                .addGap(27, 27, 27)
-                .addComponent(jLabelEmail)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCelular)
+                    .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEmail)
+                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonAddCliente)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 330, 260));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 300));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
