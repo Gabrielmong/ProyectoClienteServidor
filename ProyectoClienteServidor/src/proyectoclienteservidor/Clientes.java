@@ -1,5 +1,5 @@
 
-package ProyectoClienteServidor;
+package proyectoclienteservidor;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;

@@ -1,11 +1,11 @@
 
-package ProyectoClienteServidor;
+package proyectoclienteservidor;
 
 public class Ventana extends javax.swing.JFrame {
 
-   Clientes cliente = new Clientes();
-   Productos producto = new Productos();
-   Ventas venta = new Ventas();
+    Clientes cliente = new Clientes();
+    Productos producto = new Productos();
+    Ventas venta = new Ventas();
     public Ventana() {
         initComponents();
         cliente.CabeceraClientes(jTableClientes);
@@ -559,7 +559,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCantidadComprarActionPerformed
 
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
-        venta.AgregarTablaVentas(jTextFieldCantidadComprar, jTableProducto, jTableSubtotal,jTextFieldBajo,jTextFieldAlto, jTextFieldDescuento, jTextFieldTotal, jTextFieldTotalconDesc,jLabelTipoDescuento);
+        venta.AgregarTablaVentas(jTextFieldCantidadComprar, jTableProducto, jTableSubtotal, jTextFieldBajo, jTextFieldAlto, jTextFieldDescuento, jTextFieldTotal, jTextFieldTotalconDesc, jLabelTipoDescuento);
         //System.out.println("Item mas Alto "+venta.CalcularSubtotalAlto(jTableSubtotal));
     }//GEN-LAST:event_jButtonAddMouseClicked
 
@@ -573,42 +573,50 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jTextFieldCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCantidadKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0'|| c>'9')evt.consume();
+        if (c < '0' || c > '9')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldCantidadKeyTyped
 
     private void jTextFieldPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0'|| c>'9')evt.consume();
+        if (c < '0' || c > '9')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldPrecioKeyTyped
 
     private void jTextFieldCantidadComprarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCantidadComprarKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0'|| c>'9')evt.consume();
+        if (c < '0' || c > '9')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldCantidadComprarKeyTyped
 
     private void jTextFieldCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCelularKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0'|| c>'9')evt.consume();
+        if (c < '0' || c > '9')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldCelularKeyTyped
 
     private void jTextFieldCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCedulaKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0'|| c>'9')evt.consume();
+        if (c < '0' || c > '9')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldCedulaKeyTyped
 
     private void jTextFieldNombreCliKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreCliKeyTyped
         char c = evt.getKeyChar();
-        if (c<'a'|| c>'z')evt.consume();
+        if (c < 'a' || c > 'z')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldNombreCliKeyTyped
 
     private void jTextFieldApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldApellidoKeyTyped
         char c = evt.getKeyChar();
-        if (c<'a'|| c>'z')evt.consume();
+        if (c < 'a' || c > 'z')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldApellidoKeyTyped
 
     private void jTextFieldNombreProducKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreProducKeyTyped
         char c = evt.getKeyChar();
-        if (c<'a'|| c>'z')evt.consume();
+        if (c < 'a' || c > 'z')
+            evt.consume();
     }//GEN-LAST:event_jTextFieldNombreProducKeyTyped
 
     private void jButtonElimiClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimiClienteActionPerformed
@@ -624,7 +632,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarproductoMouseClicked
 
     private void jButtonElimiClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonElimiClienteKeyPressed
-        
+
     }//GEN-LAST:event_jButtonElimiClienteKeyPressed
 
     private void jButtonElimiClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonElimiClienteMouseClicked
@@ -632,7 +640,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonElimiClienteMouseClicked
 
     private void jButtonEliminarSubtotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEliminarSubtotalMouseClicked
-        venta.eliminarfilaventa(jTableSubtotal,jTextFieldBajo,jTextFieldAlto,jTextFieldDescuento,jTextFieldTotal,jTextFieldTotalconDesc,jLabelTipoDescuento);
+        venta.eliminarfilaventa(jTableSubtotal, jTextFieldBajo, jTextFieldAlto, jTextFieldDescuento, jTextFieldTotal, jTextFieldTotalconDesc, jLabelTipoDescuento);
     }//GEN-LAST:event_jButtonEliminarSubtotalMouseClicked
 
     private void jButtonEliminarSubtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarSubtotalActionPerformed
@@ -660,9 +668,11 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarSubtotal1KeyPressed
 
     private void btn_admnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_admnActionPerformed
-         Administrador acceso = new Administrador();
-           acceso.setVisible(true);
-           this.setVisible(false);
+        Administrador acceso = new Administrador();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        acceso.setTitle("Menú de admin");
+        this.setVisible(false);
     }//GEN-LAST:event_btn_admnActionPerformed
 
     /**
