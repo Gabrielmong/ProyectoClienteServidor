@@ -16,6 +16,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    private Administrador acceso = new Administrador();
     public Menu() {
         initComponents();
     }
@@ -82,11 +83,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
+            .addGap(0, 623, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addGap(0, 468, Short.MAX_VALUE)
         );
 
         pack();
@@ -96,7 +97,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.dispose();
-        Administrador acceso = new Administrador();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
         acceso.setTitle("Menú de admin");
@@ -160,4 +160,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem mit_eliminarPlan;
     private javax.swing.JMenuItem mit_generaRep;
     // End of variables declaration//GEN-END:variables
+
+    public Administrador getAcceso() {
+        return acceso;
+    }
+
+    public void setAcceso(Administrador acceso) {
+        this.acceso = acceso;
+    }
 }

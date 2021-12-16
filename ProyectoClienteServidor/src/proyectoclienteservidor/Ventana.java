@@ -739,6 +739,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Administrador acceso = new Administrador();
+        acceso.setV(this);
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
         acceso.setTitle("Menú de admin");
