@@ -22,16 +22,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Generar reporte"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mit_generaRepActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mit_agregarPlan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar a planilla"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mit_agregarPlanActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mit_eliminarPlan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar de planilla"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mit_eliminarPlanActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

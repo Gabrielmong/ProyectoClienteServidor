@@ -47,12 +47,27 @@ public class Menu extends javax.swing.JFrame {
         JMenu2.setText("Planilla");
 
         mit_generaRep.setText("Generar reporte");
+        mit_generaRep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mit_generaRepActionPerformed(evt);
+            }
+        });
         JMenu2.add(mit_generaRep);
 
         mit_agregarPlan.setText("Agregar a planilla");
+        mit_agregarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mit_agregarPlanActionPerformed(evt);
+            }
+        });
         JMenu2.add(mit_agregarPlan);
 
         mit_eliminarPlan.setText("Eliminar de planilla");
+        mit_eliminarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mit_eliminarPlanActionPerformed(evt);
+            }
+        });
         JMenu2.add(mit_eliminarPlan);
 
         jMenuBar1.add(JMenu2);
@@ -113,6 +128,22 @@ public class Menu extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_mit_cierraAppActionPerformed
+
+    private void mit_generaRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_generaRepActionPerformed
+       
+    }//GEN-LAST:event_mit_generaRepActionPerformed
+
+    private void mit_eliminarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_eliminarPlanActionPerformed
+      EliminarPlanilla eliminar = new EliminarPlanilla();
+           eliminar.setVisible(true);
+           this.setVisible(false);
+    }//GEN-LAST:event_mit_eliminarPlanActionPerformed
+
+    private void mit_agregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_agregarPlanActionPerformed
+      AgregarPlanilla agregar = new AgregarPlanilla();
+           agregar.setVisible(true);
+           this.setVisible(false);
+    }//GEN-LAST:event_mit_agregarPlanActionPerformed
 
     /**
      * @param args the command line arguments
