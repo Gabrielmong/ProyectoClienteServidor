@@ -1,5 +1,7 @@
 package proyectoclienteservidor;
 
+import javax.swing.JOptionPane;
+
 public class Ventana extends javax.swing.JFrame {
 
     Clientes cliente = new Clientes();
@@ -77,6 +79,8 @@ public class Ventana extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        mit_cerrarSesion = new javax.swing.JMenuItem();
+        mit_cerrarApp = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
@@ -342,7 +346,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAddCliente)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 300));
@@ -417,9 +421,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabelPrecio)
-                                .addGap(41, 41, 41)))
+                            .addComponent(jLabelPrecio))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jButtonAddProducto)
                         .addGap(47, 47, 47))
@@ -460,6 +462,12 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabelAlto.setForeground(new java.awt.Color(60, 63, 65));
         jLabelAlto.setText("SUBTOTAL MÁS ALTO");
+
+        jTextFieldDescuento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDescuentoActionPerformed(evt);
+            }
+        });
 
         jLabelTotal.setForeground(new java.awt.Color(60, 63, 65));
         jLabelTotal.setText("TOTAL SIN DESCUENTO");
@@ -555,7 +563,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 560, 120));
 
-        jMenu1.setText("File");
+        jMenu1.setText("Menu");
 
         jMenuItem1.setText("Administrador");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -567,7 +575,24 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Salir");
+
+        mit_cerrarSesion.setText("Cerrar sesion");
+        mit_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mit_cerrarSesionActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mit_cerrarSesion);
+
+        mit_cerrarApp.setText("Cerrar aplicacion");
+        mit_cerrarApp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mit_cerrarAppActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mit_cerrarApp);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -720,6 +745,27 @@ public class Ventana extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jTextFieldDescuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescuentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDescuentoActionPerformed
+
+    private void mit_cerrarAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_cerrarAppActionPerformed
+        // TODO add your handling code here:
+        
+        int salir=JOptionPane.showConfirmDialog(null, 
+                "Desea salir?", "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(salir==0){
+            
+            System.exit(0);
+        }
+        
+    }//GEN-LAST:event_mit_cerrarAppActionPerformed
+
+    private void mit_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_cerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mit_cerrarSesionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -812,5 +858,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPrecio;
     private javax.swing.JTextField jTextFieldTotal;
     private javax.swing.JTextField jTextFieldTotalconDesc;
+    private javax.swing.JMenuItem mit_cerrarApp;
+    private javax.swing.JMenuItem mit_cerrarSesion;
     // End of variables declaration//GEN-END:variables
 }

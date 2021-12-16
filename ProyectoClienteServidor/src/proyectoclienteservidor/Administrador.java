@@ -56,6 +56,11 @@ public class Administrador extends javax.swing.JFrame {
         });
 
         btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,6 +124,17 @@ public class Administrador extends javax.swing.JFrame {
     private void txt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contraseñaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_contraseñaActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        // TODO add your handling code here:
+        
+        this.dispose();
+        
+        Ventana v = new Ventana();
+        v.setVisible(true);
+        v.setLocationRelativeTo(null);
+        v.setTitle("xd");
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments
