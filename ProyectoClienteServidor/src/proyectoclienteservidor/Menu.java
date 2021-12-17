@@ -16,7 +16,6 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    private Administrador acceso = new Administrador();
     public Menu() {
         initComponents();
     }
@@ -47,27 +46,12 @@ public class Menu extends javax.swing.JFrame {
         JMenu2.setText("Planilla");
 
         mit_generaRep.setText("Generar reporte");
-        mit_generaRep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mit_generaRepActionPerformed(evt);
-            }
-        });
         JMenu2.add(mit_generaRep);
 
         mit_agregarPlan.setText("Agregar a planilla");
-        mit_agregarPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mit_agregarPlanActionPerformed(evt);
-            }
-        });
         JMenu2.add(mit_agregarPlan);
 
         mit_eliminarPlan.setText("Eliminar de planilla");
-        mit_eliminarPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mit_eliminarPlanActionPerformed(evt);
-            }
-        });
         JMenu2.add(mit_eliminarPlan);
 
         jMenuBar1.add(JMenu2);
@@ -98,11 +82,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
+            .addGap(0, 415, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 282, Short.MAX_VALUE)
         );
 
         pack();
@@ -112,6 +96,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.dispose();
+        Administrador acceso = new Administrador();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
         acceso.setTitle("Menú de admin");
@@ -128,22 +113,6 @@ public class Menu extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_mit_cierraAppActionPerformed
-
-    private void mit_generaRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_generaRepActionPerformed
-       
-    }//GEN-LAST:event_mit_generaRepActionPerformed
-
-    private void mit_eliminarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_eliminarPlanActionPerformed
-      EliminarPlanilla eliminar = new EliminarPlanilla();
-           eliminar.setVisible(true);
-           this.setVisible(false);
-    }//GEN-LAST:event_mit_eliminarPlanActionPerformed
-
-    private void mit_agregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_agregarPlanActionPerformed
-      AgregarPlanilla agregar = new AgregarPlanilla();
-           agregar.setVisible(true);
-           this.setVisible(false);
-    }//GEN-LAST:event_mit_agregarPlanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,12 +160,4 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem mit_eliminarPlan;
     private javax.swing.JMenuItem mit_generaRep;
     // End of variables declaration//GEN-END:variables
-
-    public Administrador getAcceso() {
-        return acceso;
-    }
-
-    public void setAcceso(Administrador acceso) {
-        this.acceso = acceso;
-    }
 }

@@ -16,7 +16,6 @@ public class Administrador extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
-    private Ventana v = new Ventana();
     public Administrador() {
         initComponents();
     }
@@ -36,7 +35,6 @@ public class Administrador extends javax.swing.JFrame {
         txt_contraseña = new javax.swing.JPasswordField();
         btn_iniciar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        lbl_mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,34 +62,27 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
-        lbl_mensaje.setText(" ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_iniciar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbl_usuario)
+                        .addComponent(lbl_contraseña)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_iniciar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lbl_usuario)
-                                .addComponent(lbl_contraseña)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                                    .addComponent(txt_contraseña)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(btn_salir))))
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                            .addComponent(txt_contraseña)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(lbl_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                        .addGap(67, 67, 67)
+                        .addComponent(btn_salir)))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,43 +99,28 @@ public class Administrador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_iniciar)
                     .addComponent(btn_salir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(lbl_mensaje)
-                .addGap(49, 49, 49))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_iniciarActionPerformed
-       
-       String usuario;
-       int contraseña = 0;
+       String usuario,contraseña;
        usuario=txt_usuario.getText();
-       try {
-           contraseña=Integer.parseInt(txt_contraseña.getText());
-       } catch (NumberFormatException e){
-           lbl_mensaje.setText("Formato Incorrecto");
-       }
-       
-       if (usuario.equals("admin")&&contraseña==12345){  
+       contraseña=txt_contraseña.getText();
+       if (usuario.equals("admin")&&contraseña.equals("12345")){  
            Menu acceso = new Menu();
-           acceso.setAcceso(this);
            acceso.setVisible(true);
-           acceso.setLocationRelativeTo(null);
            this.setVisible(false);
-           clearFields();
-       } else {
-           lbl_mensaje.setText("Combinación Incorrecta");
+           
+       }else{  
+           JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto");
+          
        }
            
     }//GEN-LAST:event_btn_iniciarActionPerformed
 
-    public void clearFields(){
-        txt_usuario.setText("");
-        txt_contraseña.setText("");
-        lbl_mensaje.setText("");
-    }
     private void txt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contraseñaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_contraseñaActionPerformed
@@ -152,8 +128,9 @@ public class Administrador extends javax.swing.JFrame {
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         // TODO add your handling code here:
         
-        this.setVisible(false);
+        this.dispose();
         
+        Ventana v = new Ventana();
         v.setVisible(true);
         v.setLocationRelativeTo(null);
         v.setTitle("xd");
@@ -201,17 +178,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btn_iniciar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JLabel lbl_contraseña;
-    private javax.swing.JLabel lbl_mensaje;
     private javax.swing.JLabel lbl_usuario;
     private javax.swing.JPasswordField txt_contraseña;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
-
-    public Ventana getV() {
-        return v;
-    }
-
-    public void setV(Ventana v) {
-        this.v = v;
-    }
 }

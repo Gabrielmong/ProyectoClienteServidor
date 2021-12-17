@@ -25,7 +25,7 @@ public class Ventas {
     }
 
     public Ventas() {
-        
+
     }
 
     public Clientes getCliente() {
