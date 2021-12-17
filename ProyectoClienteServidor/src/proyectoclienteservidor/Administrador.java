@@ -202,6 +202,7 @@ String hora, min, seg, ampm;
            Ventana acceso = new Ventana();
            acceso.setVisible(true);
            this.setVisible(false);
+           acceso.setTitle("Sistema");
            
        } else if (logOffCounter == 0){
            

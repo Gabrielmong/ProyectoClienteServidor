@@ -147,6 +147,8 @@ public class eliminaPlato extends javax.swing.JFrame {
         String ID=txt_eliminaPlato.getText();
         
          int horaMenu;
+         
+         if(ID.length()>0){ 
 
         horaMenu = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Selecione el horario del menu\n  "
@@ -163,7 +165,13 @@ public class eliminaPlato extends javax.swing.JFrame {
         
         
          limpia_cajas_de_texto();
-        
+         }else{
+             
+             
+             JOptionPane.showMessageDialog(null,"Ingrese correctamente los datos");
+             
+         }
+         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

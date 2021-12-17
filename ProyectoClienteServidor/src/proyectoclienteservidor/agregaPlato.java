@@ -197,16 +197,19 @@ public class agregaPlato extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         int horaMenu;
-
+        
+        String nombre = txt_nombre.getText();
+        String precio = txt_precio.getText();
+        String ID = txt_platoID.getText();
+        
+        if((nombre.length()>0)&&(precio.length()>0)&&(ID.length()>0)){
         horaMenu = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Selecione el horario del menu\n  "
                 + "Mañana ------>  0\n"
                 + " Medio dia --->  1\n"
                 + " Tarde ------->  2\n"));
 
-        String nombre = txt_nombre.getText();
-        String precio = txt_precio.getText();
-        String ID = txt_platoID.getText();
+        
 
         gestionPlato objPlato = new gestionPlato();
 
@@ -222,6 +225,11 @@ public class agregaPlato extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Plato agregado correctamente");
 
         limpia_cajas_de_texto();
+        }else{
+            
+            JOptionPane.showMessageDialog(null,"Ingrese correctamente los datos");
+            
+        }
 
     }//GEN-LAST:event_btn_agregarActionPerformed
 

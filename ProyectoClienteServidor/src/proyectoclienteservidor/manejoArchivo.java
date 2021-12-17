@@ -118,6 +118,11 @@ public class manejoArchivo  {
                 
             }
             
+            gestionPlato imp=new gestionPlato();
+           // imp.calc_impuesto(this.obj_plato.getPrecio());
+            
+            this.obj_plato.setImpuesto(imp.calc_impuesto(this.obj_plato.getPrecio()));
+            
             
             //this.nombre_archivo = "platoD.txt";
             File file = new File(this.ruta + this.nombre_archivo);

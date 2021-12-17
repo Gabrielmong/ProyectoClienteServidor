@@ -3,7 +3,7 @@ package proyectoclienteservidor;
 import javax.swing.JOptionPane;
 
 
-public class gestionPlato extends plato {
+public class gestionPlato extends plato implements manejoImpuesto {
     
      protected double impuesto;
      private double precioFinal;
@@ -61,38 +61,42 @@ public class gestionPlato extends plato {
         this.nombre = nombre;
     }
 
-     @Override
-    public double getPrecio() {
-        return precio;
-    }
+   
 
      @Override
     public void setPrecio(double precio) {
         this.precio = precio;
     }
     
-       public void calcularImpuesto (){
+    
+     @Override
+    public double calc_impuesto(double precio){
+      
         
-        precioFinal = this.precio * 0.13;
+      
+      
+      impuesto = precio * 1.13;
+      
         
-        impuesto = precioFinal + impuesto;
-        
+      return impuesto;  
         
     }
     
+    
+    
+    
+//       public void calcularImpuesto (){
+//        
+//        precioFinal = this.precio * 0.13;
+//        
+//        impuesto = precioFinal + impuesto;
+//        
+//        
+//    }
+    
 
   
-    
-//    
-//      @Override
-//    public void imprimirDatos(){
-//       
-//        super.imprimirDatos();
-//
-//        JOptionPane.showMessageDialog(null,
-//                "Precio con impuesto: "+this.impuesto ); 
-//        
-//        
+     
     }
      
     
