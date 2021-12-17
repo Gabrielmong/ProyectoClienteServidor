@@ -130,9 +130,12 @@ public void hilo (){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_menuManana.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 153));
+
+        btn_menuManana.setBackground(new java.awt.Color(255, 255, 102));
         btn_menuManana.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_menuManana.setText("Menu mañana");
+        btn_menuManana.setBorderPainted(false);
         btn_menuManana.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_menuMananaActionPerformed(evt);
@@ -140,20 +143,24 @@ public void hilo (){
         });
 
         lbl_selecMenu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_selecMenu.setText("Seleccione el menu");
+        lbl_selecMenu.setText("SELECCIONE SU MENU");
 
-        btn_menuDia.setBackground(new java.awt.Color(255, 153, 51));
+        btn_menuDia.setBackground(new java.awt.Color(255, 204, 0));
         btn_menuDia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_menuDia.setText("Menu dia");
+        btn_menuDia.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_menuDia.setBorderPainted(false);
         btn_menuDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_menuDiaActionPerformed(evt);
             }
         });
 
-        btn_menuTarde.setBackground(new java.awt.Color(255, 51, 0));
+        btn_menuTarde.setBackground(new java.awt.Color(255, 102, 0));
         btn_menuTarde.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_menuTarde.setText("Menu tarde");
+        btn_menuTarde.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_menuTarde.setBorderPainted(false);
         btn_menuTarde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_menuTardeActionPerformed(evt);
@@ -164,6 +171,7 @@ public void hilo (){
         btn_salir1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_salir1.setForeground(new java.awt.Color(255, 255, 255));
         btn_salir1.setText("Salir");
+        btn_salir1.setBorderPainted(false);
         btn_salir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salir1ActionPerformed(evt);
@@ -182,23 +190,26 @@ public void hilo (){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_salir1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbl_selecMenu)
+                        .addGap(115, 115, 115)
+                        .addComponent(lbl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_menuManana)
-                .addGap(84, 84, 84)
-                .addComponent(btn_menuDia, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(btn_menuTarde, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(lbl_selecMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_menuManana)
+                        .addGap(94, 94, 94)
+                        .addComponent(btn_menuDia, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96)
+                        .addComponent(btn_menuTarde, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(137, 137, 137))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_salir1)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,14 +220,14 @@ public void hilo (){
                     .addComponent(lbl_hora))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_menuManana, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_menuDia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_menuTarde, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_salir1)
-                .addGap(17, 17, 17))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

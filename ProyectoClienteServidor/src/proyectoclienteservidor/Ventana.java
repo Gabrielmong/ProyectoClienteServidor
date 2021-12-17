@@ -129,14 +129,15 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
 
-        lbl.setBackground(new java.awt.Color(255, 255, 255));
+        lbl.setBackground(new java.awt.Color(204, 255, 153));
         lbl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setText("SUBTOTAL");
         lbl.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, -1, -1));
 
-        jTableClientes.setBackground(new java.awt.Color(204, 204, 204));
+        jTableClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTableClientes.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -147,9 +148,10 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         ));
         jScrollPane3.setViewportView(jTableClientes);
 
-        lbl.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 94));
+        lbl.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 94));
 
-        jTableProducto.setBackground(new java.awt.Color(204, 204, 204));
+        jTableProducto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTableProducto.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jTableProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -163,7 +165,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 359, 98));
 
         jLabel1.setText("CANTIDAD A COMPRAR");
-        lbl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 140, 20));
+        lbl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 120, 20));
 
         jTextFieldCantidadComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +179,8 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         });
         lbl.add(jTextFieldCantidadComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 90, -1));
 
-        jTableSubtotal.setBackground(new java.awt.Color(204, 204, 204));
+        jTableSubtotal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTableSubtotal.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jTableSubtotal.setForeground(new java.awt.Color(51, 51, 51));
         jTableSubtotal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -189,17 +192,20 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         ));
         jScrollPane4.setViewportView(jTableSubtotal);
 
-        lbl.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 359, 90));
+        lbl.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 360, 90));
 
         jButtonAdd.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAdd.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonAdd.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAdd.setText("COMPRAR");
+        jButtonAdd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonAdd.setBorderPainted(false);
         jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonAddMouseClicked(evt);
             }
         });
-        lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, -1, -1));
+        lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("WIP");
@@ -207,8 +213,10 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 100, 50));
 
         jButtonElimiCliente.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonElimiCliente.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonElimiCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonElimiCliente.setText("ELIMINAR");
+        jButtonElimiCliente.setBorderPainted(false);
         jButtonElimiCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonElimiClienteMouseClicked(evt);
@@ -227,8 +235,10 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jButtonElimiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         jButtonEliminarproducto.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonEliminarproducto.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonEliminarproducto.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEliminarproducto.setText("ELIMINAR");
+        jButtonEliminarproducto.setBorderPainted(false);
         jButtonEliminarproducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonEliminarproductoMouseClicked(evt);
@@ -242,8 +252,10 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jButtonEliminarproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
         jButtonEliminarSubtotal.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonEliminarSubtotal.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonEliminarSubtotal.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEliminarSubtotal.setText("ELIMINAR");
+        jButtonEliminarSubtotal.setBorderPainted(false);
         jButtonEliminarSubtotal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonEliminarSubtotalMouseClicked(evt);
@@ -259,7 +271,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 jButtonEliminarSubtotalKeyPressed(evt);
             }
         });
-        lbl.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, -1, -1));
+        lbl.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 430, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -278,12 +290,19 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         jLabelCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelCliente.setText("CLIENTES");
 
+        jTextFieldNombreCli.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTextFieldNombreCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreCliActionPerformed(evt);
+            }
+        });
         jTextFieldNombreCli.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldNombreCliKeyTyped(evt);
             }
         });
 
+        jTextFieldApellido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldApellidoActionPerformed(evt);
@@ -295,21 +314,28 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jTextFieldCedula.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldCedulaKeyTyped(evt);
             }
         });
 
+        jTextFieldCelular.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldCelular.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldCelularKeyTyped(evt);
             }
         });
 
+        jTextFieldDireccion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         jButtonAddCliente.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAddCliente.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonAddCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAddCliente.setText("AGREGAR");
+        jButtonAddCliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonAddCliente.setBorderPainted(false);
         jButtonAddCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonAddClienteMouseClicked(evt);
@@ -321,6 +347,8 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jTextFieldEmail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -328,42 +356,44 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelCedula)
-                            .addComponent(jLabelApellido)
-                            .addComponent(jLabelNombre))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelCelular)
                             .addComponent(jLabelDireccion)
                             .addComponent(jLabelEmail))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(jTextFieldDireccion)
+                            .addComponent(jTextFieldCelular)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelCliente)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelCliente)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelCedula)
+                                    .addComponent(jLabelApellido)
+                                    .addComponent(jLabelNombre))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jTextFieldApellido)
+                                            .addGap(1, 1, 1)))
+                                    .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonAddCliente)
+                .addComponent(jButtonAddCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(108, 108, 108))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabelCliente)
-                .addGap(10, 10, 10)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombre)
                     .addComponent(jTextFieldNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -389,17 +419,19 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAddCliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        lbl.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 300));
+        lbl.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, 300));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 102));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         jButtonAddProducto.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAddProducto.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonAddProducto.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAddProducto.setText("AGREGAR");
+        jButtonAddProducto.setBorderPainted(false);
         jButtonAddProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonAddProductoMouseClicked(evt);
@@ -411,6 +443,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jTextFieldPrecio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldPrecioKeyTyped(evt);
@@ -421,6 +454,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
 
         jLabelCantidad.setText("CANTIDAD");
 
+        jTextFieldNombreProduc.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldNombreProduc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreProducActionPerformed(evt);
@@ -434,6 +468,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
 
         jLabelNombreProd.setText("NOMBRE");
 
+        jTextFieldCantidad.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldCantidadKeyTyped(evt);
@@ -462,63 +497,64 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                             .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPrecio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addComponent(jButtonAddProducto)
-                        .addGap(47, 47, 47))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabelProducto)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(jButtonAddProducto))
+                            .addComponent(jLabelPrecio)))
+                    .addComponent(jLabelProducto))
+                .addGap(47, 57, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNombreProd)
+                    .addComponent(jLabelCantidad)
+                    .addComponent(jLabelPrecio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelNombreProd)
-                            .addComponent(jLabelCantidad)
-                            .addComponent(jLabelPrecio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldNombreProduc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButtonAddProducto)
-                        .addGap(16, 16, 16))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNombreProduc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddProducto))
+                .addContainerGap())
         );
 
         lbl.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 480, 90));
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(102, 255, 102));
         jPanel4.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabelBajo.setText("SUBTOTAL MÁS BAJO");
 
         jLabelAlto.setText("SUBTOTAL MÁS ALTO");
 
+        jTextFieldDescuento.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldDescuento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDescuentoActionPerformed(evt);
             }
         });
 
+        jTextFieldTotal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jTextFieldTotalconDesc.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         jLabelTotal.setText("TOTAL SIN DESCUENTO");
 
         jLabel3.setText("TOTAL CON DESCUENTO");
 
+        jTextFieldBajo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldBajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBajoActionPerformed(evt);
             }
         });
 
+        jTextFieldAlto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldAlto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAltoActionPerformed(evt);
@@ -535,27 +571,31 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelBajo)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldBajo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelAlto)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTotal, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelDescuento)
-                        .addGap(23, 23, 23)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabelBajo)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldBajo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabelAlto)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabelDescuento)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabelTotal)
+                                .addGap(10, 10, 10))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(10, 10, 10)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -574,14 +614,15 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelTipoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldTotalconDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)))
@@ -597,10 +638,13 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lbl.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 560, 120));
+        lbl.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 560, 120));
 
         lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl.add(lbl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, -1));
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jMenu1.setText("Menu");
 
@@ -640,11 +684,11 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
+            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -812,6 +856,10 @@ static int contador = 0;
         menu.setV(this);
       
     }//GEN-LAST:event_mit_adminMenuActionPerformed
+
+    private void jTextFieldNombreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreCliActionPerformed
 
     /**
      * @param args the command line arguments

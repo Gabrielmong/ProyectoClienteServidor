@@ -67,6 +67,8 @@ String hora, min, seg, ampm;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         txt_usuario = new javax.swing.JTextField();
         txt_contraseña = new javax.swing.JPasswordField();
         btn_iniciar = new javax.swing.JButton();
@@ -76,9 +78,19 @@ String hora, min, seg, ampm;
         gift = new javax.swing.JLabel();
         lbl_hora = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 153, 153));
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 255, 153));
+
+        txt_usuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txt_contraseña.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txt_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_contraseñaActionPerformed(evt);
@@ -89,6 +101,7 @@ String hora, min, seg, ampm;
         btn_iniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_iniciar.setForeground(new java.awt.Color(255, 255, 255));
         btn_iniciar.setText("Iniciar");
+        btn_iniciar.setBorderPainted(false);
         btn_iniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_iniciarActionPerformed(evt);
@@ -99,6 +112,7 @@ String hora, min, seg, ampm;
         btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_salir.setForeground(new java.awt.Color(255, 255, 255));
         btn_salir.setText("Salir");
+        btn_salir.setBorderPainted(false);
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
@@ -106,11 +120,9 @@ String hora, min, seg, ampm;
         });
 
         lbl_usuarioo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_usuarioo.setForeground(new java.awt.Color(102, 102, 102));
         lbl_usuarioo.setText("Usuario");
 
         lbl_contraseña.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_contraseña.setForeground(new java.awt.Color(102, 102, 102));
         lbl_contraseña.setText("Contraseña");
 
         gift.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/google-seguridad.gif"))); // NOI18N
@@ -127,21 +139,21 @@ String hora, min, seg, ampm;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_contraseña)
-                            .addComponent(lbl_usuarioo))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                            .addComponent(txt_contraseña))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_iniciar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_salir)
-                        .addGap(35, 35, 35))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gift)
-                        .addGap(0, 26, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_iniciar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_salir))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_contraseña)
+                                    .addComponent(lbl_usuarioo))
+                                .addGap(53, 53, 53)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                                    .addComponent(txt_contraseña))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(gift))
+                .addGap(0, 26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,6 +254,8 @@ String hora, min, seg, ampm;
     private javax.swing.JButton btn_iniciar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JLabel gift;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_contraseña;
     private javax.swing.JLabel lbl_hora;
     private javax.swing.JLabel lbl_usuarioo;
