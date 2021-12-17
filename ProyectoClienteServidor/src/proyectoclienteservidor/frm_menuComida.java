@@ -286,7 +286,9 @@ public void hilo (){
 
         v.setVisible(true);
         v.setLocationRelativeTo(null);
-        v.setTitle("xd");
+       // v.setTitle("");
+        
+        this.dispose();
     }//GEN-LAST:event_btn_salir1ActionPerformed
 
     /**

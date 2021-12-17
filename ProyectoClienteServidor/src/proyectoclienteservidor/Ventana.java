@@ -19,11 +19,12 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         cliente.CabeceraClientes(jTableClientes);
         producto.CebeceraProductos(jTableProducto);
         venta.CebecerasubTotalVenta(jTableSubtotal);
-        
+
         h1 = new Thread(this);
         h1.start();
         //setVisible(true); Clase fijada
     }
+
     @Override
     public void run() {
         Thread ct = Thread.currentThread();
@@ -37,7 +38,8 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
             }
         }
     }
-     private void calcula() {
+
+    private void calcula() {
         Calendar calendario = new GregorianCalendar();
         Date fechaHoraactual = new Date();
         calendario.setTime(fechaHoraactual);
@@ -45,11 +47,11 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         if (ampm.equals("PM")) {
             int h = calendario.get(Calendar.HOUR_OF_DAY) - 12;
             hora = h > 9 ? "" + h : "0" + h;
-            if(h==00){
-                   hora="12";
-             }else{
-                   hora=h>9?""+h:"0"+h;
-             }      
+            if (h == 00) {
+                hora = "12";
+            } else {
+                hora = h > 9 ? "" + h : "0" + h;
+            }
         } else {
             hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
         }
@@ -838,15 +840,17 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_mit_cerrarAppActionPerformed
 
     private void mit_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_cerrarSesionActionPerformed
-        
+
+       
+
+        Administrador acceso = new Administrador();
+        acceso.setVisible(true);
+        this.setVisible(false);
+        acceso.setLocationRelativeTo(null);
         this.dispose();
         
-        Administrador acceso = new Administrador();
-           acceso.setVisible(true);
-           this.setVisible(false);
-           acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_mit_cerrarSesionActionPerformed
-static int contador = 0;
+    static int contador = 0;
     private void mit_adminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_adminMenuActionPerformed
         // TODO add your handling code here:
 
@@ -854,11 +858,11 @@ static int contador = 0;
         menu.setVisible(true);
         menu.setLocationRelativeTo(null);
         menu.setTitle("Menus");
-        
+
         this.setVisible(false);
-        
+
         menu.setV(this);
-      
+
     }//GEN-LAST:event_mit_adminMenuActionPerformed
 
     private void jTextFieldNombreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCliActionPerformed

@@ -8,12 +8,15 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
 
 public class manejoArchivo  {
 
     private String ruta;
     private String nombre_archivo;
     private gestionPlato obj_plato;
+    private final DecimalFormat df=new DecimalFormat("0.00");
+    
 
     public manejoArchivo(String ruta, String nombre_archivo, gestionPlato obj_plato) {
         this.ruta = ruta;
@@ -121,7 +124,7 @@ public class manejoArchivo  {
             gestionPlato imp=new gestionPlato();
            // imp.calc_impuesto(this.obj_plato.getPrecio());
             
-            this.obj_plato.setImpuesto(imp.calc_impuesto(this.obj_plato.getPrecio()));
+            this.obj_plato.setImpuesto(Double.parseDouble(df.format(imp.calc_impuesto(this.obj_plato.getPrecio()))));
             
             
             //this.nombre_archivo = "platoD.txt";
@@ -196,13 +199,13 @@ public class manejoArchivo  {
             String temp="";
             
             temp= "-         Menu           -\n";
-            temp+="ID   Nombre      Precio     \n";
+            temp+="  ID    Nombre       Precio       Precio I.V.I\n";
         
              while ((registro= br.readLine())!=null){
                 
                 StringTokenizer st= new StringTokenizer (registro,"/");
                 
-                temp+= "   " + st.nextToken() + "     " + st.nextToken()+"     " + st.nextToken() +"\n" ;
+                temp+= "  " + st.nextToken() + "     " + st.nextToken()+"     " + st.nextToken() +"     " + st.nextToken() +"\n" ;
                 
                 
             }
