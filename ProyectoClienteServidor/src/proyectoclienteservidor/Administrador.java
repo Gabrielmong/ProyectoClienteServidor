@@ -77,6 +77,7 @@ String hora, min, seg, ampm;
         lbl_contraseña = new javax.swing.JLabel();
         gift = new javax.swing.JLabel();
         lbl_hora = new javax.swing.JLabel();
+        lbl_mensaje = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -129,6 +130,9 @@ String hora, min, seg, ampm;
 
         lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
+        lbl_mensaje.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_mensaje.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,11 +142,7 @@ String hora, min, seg, ampm;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_iniciar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_salir))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbl_contraseña)
@@ -151,7 +151,13 @@ String hora, min, seg, ampm;
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                                     .addComponent(txt_contraseña))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_iniciar)
+                                .addGap(127, 127, 127)
+                                .addComponent(lbl_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(133, 133, 133)))
+                        .addComponent(btn_salir))
                     .addComponent(gift))
                 .addGap(0, 26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -177,7 +183,8 @@ String hora, min, seg, ampm;
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_iniciar)
-                    .addComponent(btn_salir))
+                    .addComponent(btn_salir)
+                    .addComponent(lbl_mensaje))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -194,7 +201,7 @@ String hora, min, seg, ampm;
            this.setVisible(false);
            
        }else{  
-           JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto");
+           lbl_mensaje.setText("Usuario o Contraseña Incorrecta");
           
        }
            
@@ -258,6 +265,7 @@ String hora, min, seg, ampm;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_contraseña;
     private javax.swing.JLabel lbl_hora;
+    private javax.swing.JLabel lbl_mensaje;
     private javax.swing.JLabel lbl_usuarioo;
     private javax.swing.JPasswordField txt_contraseña;
     private javax.swing.JTextField txt_usuario;

@@ -841,6 +841,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         Administrador acceso = new Administrador();
            acceso.setVisible(true);
            this.setVisible(false);
+           acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_mit_cerrarSesionActionPerformed
 static int contador = 0;
     private void mit_adminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_adminMenuActionPerformed
