@@ -208,9 +208,9 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("WIP");
+        jLabel4.setText("Sistema de Punto de Venta");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lbl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 100, 50));
+        lbl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 430, 50));
 
         jButtonElimiCliente.setBackground(new java.awt.Color(255, 51, 51));
         jButtonElimiCliente.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
