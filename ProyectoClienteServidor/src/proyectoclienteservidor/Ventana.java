@@ -1,18 +1,60 @@
 package proyectoclienteservidor;
 
 import javax.swing.JOptionPane;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
-public class Ventana extends javax.swing.JFrame {
+public class Ventana extends javax.swing.JFrame implements Runnable {
 
     Clientes cliente = new Clientes();
     Productos producto = new Productos();
     Ventas venta = new Ventas();
+    String hora, min, seg, ampm;
+    Calendar calendario;
+    Thread h1;
 
     public Ventana() {
         initComponents();
         cliente.CabeceraClientes(jTableClientes);
         producto.CebeceraProductos(jTableProducto);
         venta.CebecerasubTotalVenta(jTableSubtotal);
+        
+        h1 = new Thread(this);
+        h1.start();
+        //setVisible(true); Clase fijada
+    }
+    @Override
+    public void run() {
+        Thread ct = Thread.currentThread();
+        while (ct == h1) {
+            calcula();
+            lbl_hora.setText(hora + ":" + min + ":" + seg + " " + ampm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException error) {
+
+            }
+        }
+    }
+     private void calcula() {
+        Calendar calendario = new GregorianCalendar();
+        Date fechaHoraactual = new Date();
+        calendario.setTime(fechaHoraactual);
+        ampm = calendario.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
+        if (ampm.equals("PM")) {
+            int h = calendario.get(Calendar.HOUR_OF_DAY) - 12;
+            hora = h > 9 ? "" + h : "0" + h;
+            if(h==00){
+                   hora="12";
+             }else{
+                   hora=h>9?""+h:"0"+h;
+             }      
+        } else {
+            hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        }
+        min = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        seg = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
     }
 
     /**
@@ -24,7 +66,7 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        lbl = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
@@ -76,9 +118,9 @@ public class Ventana extends javax.swing.JFrame {
         jLabelDescuento = new javax.swing.JLabel();
         jLabelTipoDescuento = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lbl_hora = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         mit_adminMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mit_cerrarSesion = new javax.swing.JMenuItem();
@@ -87,16 +129,14 @@ public class Ventana extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lbl.setBackground(new java.awt.Color(255, 255, 255));
+        lbl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("SUBTOTAL");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, -1, -1));
+        lbl.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, -1, -1));
 
         jTableClientes.setBackground(new java.awt.Color(204, 204, 204));
-        jTableClientes.setForeground(new java.awt.Color(51, 51, 51));
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -107,7 +147,7 @@ public class Ventana extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTableClientes);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 94));
+        lbl.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 94));
 
         jTableProducto.setBackground(new java.awt.Color(204, 204, 204));
         jTableProducto.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,11 +160,10 @@ public class Ventana extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableProducto);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 359, 98));
+        lbl.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 359, 98));
 
-        jLabel1.setForeground(new java.awt.Color(60, 63, 65));
         jLabel1.setText("CANTIDAD A COMPRAR");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 140, 20));
+        lbl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 140, 20));
 
         jTextFieldCantidadComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +175,7 @@ public class Ventana extends javax.swing.JFrame {
                 jTextFieldCantidadComprarKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextFieldCantidadComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 90, -1));
+        lbl.add(jTextFieldCantidadComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 90, -1));
 
         jTableSubtotal.setBackground(new java.awt.Color(204, 204, 204));
         jTableSubtotal.setForeground(new java.awt.Color(51, 51, 51));
@@ -150,22 +189,25 @@ public class Ventana extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTableSubtotal);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 359, 90));
+        lbl.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 359, 90));
 
+        jButtonAdd.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAdd.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAdd.setText("COMPRAR");
         jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonAddMouseClicked(evt);
             }
         });
-        jPanel1.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, -1, -1));
+        lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("WIP");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 100, 50));
+        lbl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 100, 50));
 
+        jButtonElimiCliente.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonElimiCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonElimiCliente.setText("ELIMINAR");
         jButtonElimiCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,8 +224,10 @@ public class Ventana extends javax.swing.JFrame {
                 jButtonElimiClienteKeyPressed(evt);
             }
         });
-        jPanel1.add(jButtonElimiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+        lbl.add(jButtonElimiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
+        jButtonEliminarproducto.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonEliminarproducto.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEliminarproducto.setText("ELIMINAR");
         jButtonEliminarproducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -195,8 +239,10 @@ public class Ventana extends javax.swing.JFrame {
                 jButtonEliminarproductoKeyTyped(evt);
             }
         });
-        jPanel1.add(jButtonEliminarproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, -1));
+        lbl.add(jButtonEliminarproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
+        jButtonEliminarSubtotal.setBackground(new java.awt.Color(255, 51, 51));
+        jButtonEliminarSubtotal.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEliminarSubtotal.setText("ELIMINAR");
         jButtonEliminarSubtotal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -213,30 +259,23 @@ public class Ventana extends javax.swing.JFrame {
                 jButtonEliminarSubtotalKeyPressed(evt);
             }
         });
-        jPanel1.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, -1, -1));
+        lbl.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
-        jLabelNombre.setForeground(new java.awt.Color(102, 102, 102));
         jLabelNombre.setText("NOMBRE");
 
-        jLabelApellido.setForeground(new java.awt.Color(102, 102, 102));
         jLabelApellido.setText("APELLIDO");
 
-        jLabelCedula.setForeground(new java.awt.Color(102, 102, 102));
         jLabelCedula.setText("CEDULA");
 
-        jLabelDireccion.setForeground(new java.awt.Color(102, 102, 102));
         jLabelDireccion.setText("DIRECCION");
 
-        jLabelCelular.setForeground(new java.awt.Color(102, 102, 102));
         jLabelCelular.setText("CELULAR");
 
-        jLabelEmail.setForeground(new java.awt.Color(102, 102, 102));
         jLabelEmail.setText("EMAIL");
 
         jLabelCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelCliente.setForeground(new java.awt.Color(102, 102, 102));
         jLabelCliente.setText("CLIENTES");
 
         jTextFieldNombreCli.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -268,6 +307,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        jButtonAddCliente.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAddCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAddCliente.setText("AGREGAR");
         jButtonAddCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -351,10 +392,13 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 300));
+        lbl.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 300));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 102));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
+        jButtonAddProducto.setBackground(new java.awt.Color(0, 204, 0));
+        jButtonAddProducto.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAddProducto.setText("AGREGAR");
         jButtonAddProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -373,10 +417,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabelPrecio.setForeground(new java.awt.Color(60, 63, 65));
         jLabelPrecio.setText("PRECIO");
 
-        jLabelCantidad.setForeground(new java.awt.Color(60, 63, 65));
         jLabelCantidad.setText("CANTIDAD");
 
         jTextFieldNombreProduc.addActionListener(new java.awt.event.ActionListener() {
@@ -390,7 +432,6 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabelNombreProd.setForeground(new java.awt.Color(60, 63, 65));
         jLabelNombreProd.setText("NOMBRE");
 
         jTextFieldCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -400,7 +441,6 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         jLabelProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelProducto.setForeground(new java.awt.Color(102, 102, 102));
         jLabelProducto.setText("PRODUCTO");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -424,7 +464,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelPrecio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(jButtonAddProducto)
                         .addGap(47, 47, 47))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -454,15 +494,13 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(16, 16, 16))))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 480, 80));
+        lbl.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 480, 90));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setForeground(new java.awt.Color(204, 204, 204));
 
-        jLabelBajo.setForeground(new java.awt.Color(60, 63, 65));
         jLabelBajo.setText("SUBTOTAL MÁS BAJO");
 
-        jLabelAlto.setForeground(new java.awt.Color(60, 63, 65));
         jLabelAlto.setText("SUBTOTAL MÁS ALTO");
 
         jTextFieldDescuento.addActionListener(new java.awt.event.ActionListener() {
@@ -471,10 +509,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabelTotal.setForeground(new java.awt.Color(60, 63, 65));
         jLabelTotal.setText("TOTAL SIN DESCUENTO");
 
-        jLabel3.setForeground(new java.awt.Color(60, 63, 65));
         jLabel3.setText("TOTAL CON DESCUENTO");
 
         jTextFieldBajo.addActionListener(new java.awt.event.ActionListener() {
@@ -489,11 +525,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabelDescuento.setForeground(new java.awt.Color(60, 63, 65));
         jLabelDescuento.setText("DESCUENTO");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("FACTURA");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -563,17 +597,13 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 560, 120));
+        lbl.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 560, 120));
+
+        lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_hora.setText("jLabel5");
+        lbl.add(lbl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, -1));
 
         jMenu1.setText("Menu");
-
-        jMenuItem1.setText("Administrador");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         mit_adminMenu.setText("Gestionar menus");
         mit_adminMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -611,12 +641,12 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
+            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -747,14 +777,6 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreProducActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Administrador acceso = new Administrador();
-        acceso.setVisible(true);
-        acceso.setLocationRelativeTo(null);
-        acceso.setTitle("Menú de admin");
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jTextFieldDescuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescuentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDescuentoActionPerformed
@@ -773,9 +795,11 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_mit_cerrarAppActionPerformed
 
     private void mit_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_cerrarSesionActionPerformed
-        // TODO add your handling code here:
+        Administrador acceso = new Administrador();
+           acceso.setVisible(true);
+           this.setVisible(false);
     }//GEN-LAST:event_mit_cerrarSesionActionPerformed
-
+static int contador = 0;
     private void mit_adminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_adminMenuActionPerformed
         // TODO add your handling code here:
 
@@ -787,7 +811,7 @@ public class Ventana extends javax.swing.JFrame {
         this.setVisible(false);
         
         menu.setV(this);
-        
+      
     }//GEN-LAST:event_mit_adminMenuActionPerformed
 
     /**
@@ -856,8 +880,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -882,6 +904,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPrecio;
     private javax.swing.JTextField jTextFieldTotal;
     private javax.swing.JTextField jTextFieldTotalconDesc;
+    private javax.swing.JPanel lbl;
+    private javax.swing.JLabel lbl_hora;
     private javax.swing.JMenuItem mit_adminMenu;
     private javax.swing.JMenuItem mit_cerrarApp;
     private javax.swing.JMenuItem mit_cerrarSesion;

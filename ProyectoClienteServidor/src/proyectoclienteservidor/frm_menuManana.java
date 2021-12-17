@@ -35,6 +35,7 @@ public class frm_menuManana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btn_mostrarMenuM.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_mostrarMenuM.setText("Mostrar menu");
         btn_mostrarMenuM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,6 +43,7 @@ public class frm_menuManana extends javax.swing.JFrame {
             }
         });
 
+        btn_admMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_admMenu.setText("Gestionar menu");
         btn_admMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +51,9 @@ public class frm_menuManana extends javax.swing.JFrame {
             }
         });
 
+        btn_salir.setBackground(new java.awt.Color(204, 0, 0));
+        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_salir.setForeground(new java.awt.Color(255, 255, 255));
         btn_salir.setText("Salir");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,27 +66,27 @@ public class frm_menuManana extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
                         .addComponent(btn_mostrarMenuM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                         .addComponent(btn_admMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btn_salir)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_mostrarMenuM, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_admMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addGap(100, 100, 100)
                 .addComponent(btn_salir)
-                .addGap(74, 74, 74))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -97,12 +102,6 @@ public class frm_menuManana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        // TODO add your handling code here:
-        
-        this.dispose();
-    }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_mostrarMenuMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarMenuMActionPerformed
         // TODO add your handling code here:
@@ -135,6 +134,14 @@ public class frm_menuManana extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_admMenuActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        // TODO add your handling code here:
+frm_menuComida v = new frm_menuComida();
+        v.setVisible(true);
+        v.setLocationRelativeTo(null);
+        v.setTitle("xd");
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments
