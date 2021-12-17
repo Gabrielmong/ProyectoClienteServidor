@@ -1,26 +1,11 @@
 package proyectoclienteservidor;
-
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import java.util.Timer;
-import java.util.TimerTask;
-
-
-
 public class Main {
-  
-
-   //  static int contador = 0;
-    public static void main (String[] args) {
-        
-      Administrador v = new Administrador();
+    public static void main(String[] args) {
+        Ventana v = new Ventana();
         v.setVisible(true);
         v.setLocationRelativeTo(null);
         v.setTitle("xd");
-        
-        
-        
+
 //agregaPlato agreg=new agregaPlato();
 //agreg.setVisible(true);
 //agreg.setLocationRelativeTo(null);
@@ -33,9 +18,10 @@ public class Main {
 //eli.setTitle("Eliminar Plato");
 
 
-//looooooooool
-//aaa
-       
+
+
+
+        
 
     }
     
