@@ -235,6 +235,7 @@ String hora, min, seg, ampm;
         // TODO add your handling code here:
         
         this.dispose();
+        System.exit(0);
         
       
     }//GEN-LAST:event_btn_salirActionPerformed
