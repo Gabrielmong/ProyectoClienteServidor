@@ -15,6 +15,7 @@ public class frm_menuManana extends javax.swing.JFrame {
     /**
      * Creates new form frm_menuManana
      */
+    private frm_menuComida m = new frm_menuComida();
     public frm_menuManana() {
         initComponents();
     }
@@ -160,10 +161,9 @@ public class frm_menuManana extends javax.swing.JFrame {
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         // TODO add your handling code here:
-frm_menuComida v = new frm_menuComida();
-        v.setVisible(true);
-        v.setLocationRelativeTo(null);
-        v.setTitle("xd");
+
+        
+        this.dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
@@ -208,4 +208,12 @@ frm_menuComida v = new frm_menuComida();
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public frm_menuComida getM() {
+        return m;
+    }
+
+    public void setM(frm_menuComida m) {
+        this.m = m;
+    }
 }

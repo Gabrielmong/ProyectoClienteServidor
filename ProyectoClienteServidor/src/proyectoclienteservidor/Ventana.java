@@ -842,7 +842,6 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
            acceso.setVisible(true);
            this.setVisible(false);
            acceso.setLocationRelativeTo(null);
-           acceso.setTitle("Log In");
     }//GEN-LAST:event_mit_cerrarSesionActionPerformed
 static int contador = 0;
     private void mit_adminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_adminMenuActionPerformed
