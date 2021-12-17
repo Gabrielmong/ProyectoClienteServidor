@@ -8,6 +8,8 @@ package proyectoclienteservidor;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -131,6 +133,7 @@ String hora, min, seg, ampm;
         lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         lbl_mensaje.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_mensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_mensaje.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,7 +145,7 @@ String hora, min, seg, ampm;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbl_contraseña)
@@ -150,16 +153,15 @@ String hora, min, seg, ampm;
                                 .addGap(53, 53, 53)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                                    .addComponent(txt_contraseña))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txt_contraseña)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn_iniciar)
-                                .addGap(127, 127, 127)
-                                .addComponent(lbl_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(133, 133, 133)))
+                                .addGap(18, 18, 18)
+                                .addComponent(lbl_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(12, 12, 12)
                         .addComponent(btn_salir))
                     .addComponent(gift))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,6 +193,7 @@ String hora, min, seg, ampm;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private int logOffCounter=3;
     private void btn_iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_iniciarActionPerformed
        String usuario,contraseña;
        usuario=txt_usuario.getText();
@@ -200,10 +203,27 @@ String hora, min, seg, ampm;
            acceso.setVisible(true);
            this.setVisible(false);
            
-       }else{  
-           lbl_mensaje.setText("Usuario o Contraseña Incorrecta");
+       } else if (logOffCounter == 0){
+           
+           try {
+               Thread.sleep(500);
+           } catch (InterruptedException ex) {
+               Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
+           System.exit(0);
+           
+       } else {  
+           String Message;
+           if (logOffCounter != 1){
+               Message = "Usuario o Contraseña Incorrecta, "+logOffCounter+" intentos restantes.";
+           } else { 
+               Message = "Usuario o Contraseña Incorrecta, "+logOffCounter+" intento restante.";
+           }
+           lbl_mensaje.setText(Message);
+           logOffCounter--;
           
-       }
+       } 
            
     }//GEN-LAST:event_btn_iniciarActionPerformed
 

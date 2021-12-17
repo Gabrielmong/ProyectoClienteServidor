@@ -4,24 +4,7 @@ public class Main {
         Administrador v = new Administrador();
         v.setVisible(true);
         v.setLocationRelativeTo(null);
-        v.setTitle("xd");
-
-//agregaPlato agreg=new agregaPlato();
-//agreg.setVisible(true);
-//agreg.setLocationRelativeTo(null);
-//agreg.setTitle("Agregar Plato");
-
-//eliminaPlato eli=new eliminaPlato();
-//
-//eli.setVisible(true);
-//eli.setLocationRelativeTo(null);
-//eli.setTitle("Eliminar Plato");
-
-
-
-
-
-        
+        v.setTitle("Login");
 
     }
     

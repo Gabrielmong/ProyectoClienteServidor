@@ -134,7 +134,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setText("SUBTOTAL");
-        lbl.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, -1, -1));
+        lbl.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, -1, -1));
 
         jTableClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTableClientes.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -165,7 +165,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 359, 98));
 
         jLabel1.setText("CANTIDAD A COMPRAR");
-        lbl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 120, 20));
+        lbl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 140, 20));
 
         jTextFieldCantidadComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +177,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 jTextFieldCantidadComprarKeyTyped(evt);
             }
         });
-        lbl.add(jTextFieldCantidadComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 90, -1));
+        lbl.add(jTextFieldCantidadComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 90, -1));
 
         jTableSubtotal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTableSubtotal.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -192,7 +192,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         ));
         jScrollPane4.setViewportView(jTableSubtotal);
 
-        lbl.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 360, 90));
+        lbl.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 430, 90));
 
         jButtonAdd.setBackground(new java.awt.Color(0, 204, 0));
         jButtonAdd.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -205,7 +205,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 jButtonAddMouseClicked(evt);
             }
         });
-        lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 90, -1));
+        lbl.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("WIP");
@@ -271,7 +271,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                 jButtonEliminarSubtotalKeyPressed(evt);
             }
         });
-        lbl.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 430, -1, -1));
+        lbl.add(jButtonEliminarSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -419,7 +419,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAddCliente)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbl.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, 300));
@@ -684,7 +684,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -842,6 +842,7 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
            acceso.setVisible(true);
            this.setVisible(false);
            acceso.setLocationRelativeTo(null);
+           acceso.setTitle("Log In");
     }//GEN-LAST:event_mit_cerrarSesionActionPerformed
 static int contador = 0;
     private void mit_adminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mit_adminMenuActionPerformed
