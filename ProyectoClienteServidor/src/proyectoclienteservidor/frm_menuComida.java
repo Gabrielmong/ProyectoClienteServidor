@@ -174,7 +174,6 @@ public void hilo (){
         jLabel1.setText("jLabel1");
 
         lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_hora.setText("jLabel5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

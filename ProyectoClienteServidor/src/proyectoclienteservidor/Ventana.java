@@ -600,7 +600,6 @@ public class Ventana extends javax.swing.JFrame implements Runnable {
         lbl.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 560, 120));
 
         lbl_hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_hora.setText("jLabel5");
         lbl.add(lbl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, -1));
 
         jMenu1.setText("Menu");

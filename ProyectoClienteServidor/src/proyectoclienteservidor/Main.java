@@ -1,7 +1,7 @@
 package proyectoclienteservidor;
 public class Main {
     public static void main(String[] args) {
-        Ventana v = new Ventana();
+        Administrador v = new Administrador();
         v.setVisible(true);
         v.setLocationRelativeTo(null);
         v.setTitle("xd");
