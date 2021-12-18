@@ -1,8 +1,8 @@
 # ProyectoClienteServidor
 
-Work in progress rn, still have some things left to-do
+Final Version of the Uni Project
 
-Absolute Layout Library used in the project
+Absolute Layout Library used
 Being currently developed in Netbeans
 
-idk what else to say tho lol
+Open in IDE and Run and Compile
